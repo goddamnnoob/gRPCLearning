@@ -8,11 +8,13 @@ import java.io.IOException;
 
 public class EmployeeServer {
     public static void main(String[] args) throws IOException,InterruptedException {
+        System.out.println("Starting Server");
         Server server = ServerBuilder
                 .forPort(4666)
                 .addService(new EmployeeServiceImpl())
                 .build();
         server.start();
+        System.out.println("Server Started");
         server.awaitTermination();
     }
 }
